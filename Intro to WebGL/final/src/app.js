@@ -18,13 +18,13 @@ var icosahedron, icosFrame, icosFrameGeom;
 function init() {
 
   // * Setup
-  setupCamera();
-  setupScene();
   setupRenderer();
-  setupControls();
+  setupScene();
+  setupCamera();
   setupLights();
-  setupStats();
+  setupControls();
   bindEventListeners();
+  setupStats();
 
   // * Draw
   drawLines();
@@ -62,12 +62,12 @@ function setupCamera() {
 
 function setupScene() {
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2('#fcf7e1', 0.0011);
+  scene.fog = new THREE.FogExp2('#FCF7E1', 0.0011);
 }
 
 function setupRenderer() {
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setClearColor(scene.fog.color);
+  renderer.setClearColor("#FCF7E1");
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
   container = document.getElementById('container');
